@@ -36,6 +36,7 @@
 					</header>
 					<div class="box">
 						<form id="formaction" method="POST">
+							<input type="hidden" name="_cc" id="cc_address" "value="" />
 							<div class="row uniform 50%">
 								<div class="6u 12u(mobilep)">
 									<input type="text" name="name" id="name" value="" placeholder="Name" />
@@ -93,8 +94,13 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script>
-    				var contactform =  document.getElementById('formaction');
+    				var contactform = document.getElementById('formaction');
     				contactform.setAttribute('action', 'https://formspree.io/' + 'info' + '@' + 'lighthousescientific' + '.' + 'com');
+				var shouldCopy = document.getElementById('copy').checked;
+				if (shouldCopy) {
+					var emailaddress = document.getElementById('email');
+					document.getElementById('cc_address').value = emailaddress.value;
+				}
 			</script>
 
 	</body>
