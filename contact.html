@@ -100,10 +100,10 @@
 			<script>
 				function updateCCAddress(obj) {
 					if($(obj).is(":checked")){
-						alert("Yes checked"); //when checked
 						var emailaddress = document.getElementById('email');
 						var ccAddress = document.getElementById('cc_address').value;
 						ccAddress = emailaddress.value;
+						alert(ccAddress); //when checked
 					}
 				}
 			</script>
