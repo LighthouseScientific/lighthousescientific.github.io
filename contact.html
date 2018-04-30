@@ -52,7 +52,7 @@
 							</div>
                             <div class="row uniform 50%">
                                 <div class="6u 12u(narrower)">
-                                    <input type="checkbox" id="copy" name="copy">
+                                    <input type="checkbox" id="copy" name="copy" onchange="updateCCAddress(this)">
                                     <label for="copy">Email me a copy of this message</label>
                                 </div>
                             </div>
@@ -95,16 +95,16 @@
 			<script src="assets/js/main.js"></script>
 			<script>
     				var contactform = document.getElementById('formaction');
-				var shouldCopy = document.getElementById('copy').checked;
-				alert("here!");
-				alert(shouldCopy);
-				if (shouldCopy == true) {
-					var emailaddress = document.getElementById('email');
-					var ccAddress = document.getElementById('cc_address').value;
-					ccAddress = emailaddress.value;
-					alert(ccAddress);
-				}
 				contactform.setAttribute('action', 'https://formspree.io/' + 'info' + '@' + 'lighthousescientific' + '.' + 'com');
+			</script>
+			<script>
+				function updateCCAddress(obj) {
+					if($(obj).is(":checked")){
+						var emailaddress = document.getElementById('email');
+						var ccAddress = document.getElementById('cc_address').value;
+						ccAddress = emailaddress.value;
+					}
+				}
 			</script>
 
 	</body>
