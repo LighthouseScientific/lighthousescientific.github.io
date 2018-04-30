@@ -95,12 +95,14 @@
 			<script src="assets/js/main.js"></script>
 			<script>
     				var contactform = document.getElementById('formaction');
-    				contactform.setAttribute('action', 'https://formspree.io/' + 'info' + '@' + 'lighthousescientific' + '.' + 'com');
 				var shouldCopy = document.getElementById('copy').checked;
-				if (shouldCopy) {
+				if (shouldCopy == true) {
 					var emailaddress = document.getElementById('email');
-					document.getElementById('cc_address').value = emailaddress.value;
+					var ccAddress = document.getElementById('cc_address').value;
+					ccAddress = emailaddress.value;
+					alert(ccAddress);
 				}
+				contactform.setAttribute('action', 'https://formspree.io/' + 'info' + '@' + 'lighthousescientific' + '.' + 'com');
 			</script>
 
 	</body>
