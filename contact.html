@@ -38,6 +38,7 @@
 						<form id="formaction" method="POST">
 							<input type="hidden" name="_cc" id="cc_address" "value="daniel.badali@gmail.com" />
 							<input type="hidden" name="_next" value="http://lighthousescientific.com/" />
+							<input type="text" name="_gotcha" style="display:none" />
 							<div class="row uniform 50%">
 								<div class="6u 12u(mobilep)">
 									<input type="text" name="name" id="name" value="" placeholder="Name" />
@@ -108,11 +109,12 @@
 				}
 			</script>
 			<script>
+			// https://stackoverflow.com/questions/5614399/disabling-submit-button-until-all-fields-have-values
 			(function() {
-			    $('form input').keyup(function() {
+			    $('form :input').keyup(function() {
 
 				var empty = false;
-				$('form input').each(function() {
+				$('form :input').each(function() {
 					if ($(this).is(":hidden") != true) {
 					    if ($(this).val() == '') {
 						empty = true;
