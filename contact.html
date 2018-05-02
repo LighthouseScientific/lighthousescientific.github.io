@@ -65,7 +65,7 @@
 							<div class="row uniform">
 								<div class="12u">
 									<ul class="actions align-center">
-										<li><input type="submit" id="submit" value="Send Message" disabled="disabled" /></li>
+										<li><input type="submit" value="Send Message" disabled="disabled" /></li>
 									</ul>
 								</div>
 							</div>
@@ -113,16 +113,16 @@
 			    $('form > input').keyup(function() {
 
 				var empty = false;
-				$('form > input').each(function() {
+				$('form input').each(function() {
 				    if ($(this).val() == '') {
 					empty = true;
 				    }
 				});
 
 				if (empty) {
-				    $('#submit').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+				    $('input[type="submit"]').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
 				} else {
-				    $('#submit').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+				    $('input[type="submit"]').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
 				}
 			    });
 			})()
