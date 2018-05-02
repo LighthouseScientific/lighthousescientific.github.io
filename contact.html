@@ -113,9 +113,11 @@
 
 				var empty = false;
 				$('form input').each(function() {
-				    if ($(this).val() == '') {
-					empty = true;
-				    }
+					if ($(this).is(":hidden") != true) {
+					    if ($(this).val() == '') {
+						empty = true;
+					    }
+					}
 				});
 
 				if (empty) {
