@@ -118,22 +118,8 @@
 				}
 			</script>
 			<script>
-				var subject = $('#formaction').find('subject').html();
-				var name = $('#formaction').find('name').html();
-				var email = $('#formaction').find('email').html();
-				var description = $('#formaction').find('message').html();
-
-				var message = '<h1>' + subject +  '</h1><br><br>' +
-					'<ul>'+
-						'<li>'+
-								'Name: ' + name +
-						'</li>' +
-								'Email: ' + email +
-						'<li>'+
-								'Message: ' + description +
-						'</li>' +
-					'</ul>';
 				$("#form-submit-btn").on("click", function() {
+				message = $("#formaction").serialize();
 				$.ajax({
 					url: "//formspree.io/info@lighthousescientific.com",
 					method: "POST",
