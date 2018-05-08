@@ -129,7 +129,7 @@
 								<input type="email" name="email" id="email" placeholder="Email Address" required />
 							</div>
 							<div class="4u 12u(mobilep)">
-								<input type="submit" value="Sign Up" class="fit" />
+								<input type="submit" data-dismiss="modal" id="form-submit-btn" value="Sign Up" class="fit" />
 							</div>
 						</div>
 					</form>
@@ -139,7 +139,7 @@
 			<!-- Footer -->
 				<footer id="footer">
 					<ul class="icons">
-						<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://www.linkedin.com/company/lighthouse-scientific" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
 					</ul>
 					<ul class="copyright">
 						<li>&copy; 2018 Lighthouse Scientific. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
@@ -157,5 +157,18 @@
             		<script src="assets/js/jquery.scrolly.min.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script>
+				$("#form-submit-btn").on("click", function() {
+				message = $("#formaction").serialize();
+				$.ajax({
+					url: "//formspree.io/info@lighthousescientific.com",
+					method: "POST",
+					data: {message: message},
+					dataType: "json"
+				});
+				alert('Thanks for the email, we\'ll be in touch soon!');
+				return false;
+			});
+			</script>
 	</body>
 </html>
